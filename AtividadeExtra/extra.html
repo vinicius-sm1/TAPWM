@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formas de criar objetos</title>
+</head>
+<body>
+    <script>
+        //Olá, meu nome é , tenho  anos e meu hobby é 
+        var pessoa1 = new Object();
+        pessoa1.nome = "Eduardo";
+        pessoa1.idade = "18";
+        pessoa1.hobby = "Futebol";
+        pessoa1.apresentar =  function()
+        {
+            alert(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e meu hobby é ${this.hobby}`);
+        }
+        pessoa1.apresentar();
+
+        var pessoa2 = {
+            nome: "Paulinho",
+            idade: "9",
+            hobby: "Desenhar",
+            apresentar: function()
+        {
+            alert(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e meu hobby é ${this.hobby}`);
+        }
+        };
+        pessoa2.apresentar();
+        
+        //Função construtoidade COLOCAR HOBBY MOSTRAR
+        function Pessoa(nome, idade, hobby) {
+            this.nome = nome;
+            this.idade = idade;
+            this.hobby = hobby;
+            this.apresentar = function() {
+                alert(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e meu hobby é ${this.hobby}`);
+            }
+        }
+        var pessoa3 = new Pessoa("Marcia", "60", "Cozinhar");
+        pessoa3.apresentar();
+
+        class Pessoa1 {
+            constructor() {
+                this._nome;
+                this._idade;
+                this._hobby;
+            }
+            setNome(value) {
+                this._nome = value;
+            }
+            getNome() {
+                return this._nome;
+            }
+            setidade(value) {
+                this._idade = value;
+            }
+            getidade() {
+                return this._idade;
+            }
+            setHobby(value) {
+                this._hobby = value;
+            }
+            getHobby() {
+                return this._hobby;
+            }
+            apresentar() {
+            return alert(`Olá, meu nome é ${this._nome}, tenho ${this._idade} anos e meu hobby é ${this._hobby}`);
+            }
+        }
+        //COLOCAR HOBBY
+        var pessoa4 = new Pessoa1();
+        pessoa4.setNome("Daniel");
+        pessoa4.setidade('80');
+        pessoa4.setHobby("Jardinagem");
+        pessoa4.apresentar();
+
+        const objNome = { nome: 'Paulo' };
+        const pessoa5 = Object.create(objNome,{ idade: { value : '12' }, hobby : { value : 'Ler'} });
+        pessoa5.apresentar =  function()
+        {
+            alert(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e meu hobby é ${this.hobby}`);
+        }
+        pessoa5.apresentar();
+
+    </script>
+</body>
+</html>
