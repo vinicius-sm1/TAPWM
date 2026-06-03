@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<script>
+   function mudar1() {
+        document.getElementById("input1").value = document.getElementById("input1").value.toUpperCase();
+    }
+   function mudar2() {
+        document.getElementById("input1").value = document.getElementById("input1").value.toLowerCase();
+    }
+</script>
+<body>
+    <input type="text" id="input1">
+    <input type="radio" id="radio1" name="radiobotao" onchange="mudar1()">
+    <input type="radio" id="radio2" name="radiobotao" onchange="mudar2()">
+
+</body>
+</html>
